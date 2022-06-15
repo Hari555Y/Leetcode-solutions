@@ -1,0 +1,10 @@
+// https://leetcode.com/problems/capital-gainloss
+
+# Write your MySQL query statement below
+with cte1 as(
+select stock_name,sum(price) as buyprice from stocks where operation='Buy' group by stock_name
+),cte2 as(
+select stock_name,sum(price) as sellprice from stocks where operation='Sell' group by stock_name
+)
+
+select b.stock_name,s.sellprice-b.buyprice as capital_gain_loss from cte1 b join cte2 s on b.stock_name=s.stock_name 
