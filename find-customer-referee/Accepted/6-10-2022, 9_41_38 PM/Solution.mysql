@@ -1,0 +1,4 @@
+// https://leetcode.com/problems/find-customer-referee
+
+# Write your MySQL query statement below
+select customer.name from customer where customer.referee_id IS null or customer.referee_id <> 2;
