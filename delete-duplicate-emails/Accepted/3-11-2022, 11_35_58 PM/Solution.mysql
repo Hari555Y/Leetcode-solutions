@@ -1,0 +1,5 @@
+// https://leetcode.com/problems/delete-duplicate-emails
+
+# Write your MySQL query statement below
+with cte(id, email) as (select min(id), email from person group by email)
+delete from person where person.id not in (select id from cte);

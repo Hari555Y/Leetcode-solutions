@@ -1,0 +1,4 @@
+// https://leetcode.com/problems/customers-who-never-order
+
+# Write your MySQL query statement below
+select distinct name as Customers from customers, orders where customers.id not in (select customerid from orders);
